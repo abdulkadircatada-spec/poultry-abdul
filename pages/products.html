@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - Poultry Farm</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>🐔 Poultry Farm</h2>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="categories.html" class="nav-link">Chicken Categories</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link active">All Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin.html" class="nav-link">Admin Dashboard</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header" style="background: linear-gradient(rgba(45, 95, 59, 0.75), rgba(45, 95, 59, 0.75)), url('../images (2).jpg') center/cover; color: white; text-align: center; padding: 4rem 2rem;">
+        <h1 class="page-title" style="font-size: 2.5rem; font-weight: 700;">All Chickens</h1>
+        <p class="page-subtitle" style="font-size: 1.125rem; margin-top: 0.75rem; opacity: 0.95;">Browse our complete product listings</p>
+    </header>
+
+    <!-- Products Section -->
+    <section class="products">
+        <div class="container">
+            <div class="products-grid" id="allProducts">
+                <!-- Products loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Poultry Farm. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/products.js"></script>
+</body>
+</html>

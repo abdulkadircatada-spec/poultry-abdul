@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poultry Farm - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Note: fonts.googleapis.com and fonts.gstatic.com links appear unreachable from this location; 
+       If styling looks different, you may download Inter font files locally -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>🐔 Poultry Farm</h2>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/categories.html" class="nav-link">Chicken Categories</a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/products.html" class="nav-link">All Products</a>
+                </li>
+                <!-- Admin Dashboard link REMOVED here -->
+            </ul>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to Our Poultry Farm</h1>
+            <p class="hero-subtitle">Premium quality chickens raised with care and dedication</p>
+            <a href="pages/products.html" class="hero-btn">View Our Chickens</a>
+        </div>
+    </header>
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">About Our Business</h2>
+            <p class="section-text">We are a trusted poultry business dedicated to providing healthy, high-quality chickens for our customers. With years of experience in poultry farming, we ensure our birds receive the best care, nutrition, and living conditions. Whether you're looking for young chicks or mature chickens, we have the perfect birds to meet your needs.</p>
+        </div>
+    </section>
+    <!-- Featured Chickens Section -->
+    <section class="featured">
+        <div class="container">
+            <h2 class="section-title">Featured Chickens</h2>
+            <div class="products-grid" id="featuredProducts">
+                <!-- Featured products will be dynamically loaded -->
+            </div>
+            <div class="view-all-container">
+                <a href="pages/products.html" class="view-all-btn">View All Products</a>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Poultry Farm. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/app.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>

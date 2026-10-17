@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicken Categories - Poultry Farm</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>🐔 Poultry Farm</h2>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="categories.html" class="nav-link active">Chicken Categories</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link">All Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin.html" class="nav-link">Admin Dashboard</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header" style="background: linear-gradient(rgba(45, 95, 59, 0.75), rgba(45, 95, 59, 0.75)), url('../images (1).jpg') center/cover; color: white; text-align: center; padding: 4rem 2rem;">
+        <h1 class="page-title" style="font-size: 2.5rem; font-weight: 700;">Chicken Categories</h1>
+        <p class="page-subtitle" style="font-size: 1.125rem; margin-top: 0.75rem; opacity: 0.95;">Organized by age groups</p>
+    </header>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <!-- 4-month-old chickens -->
+            <div class="category-section" style="margin-bottom: 3rem;">
+                <h2 class="category-title" style="font-size: 1.75rem; color: var(--primary-color); margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 3px solid var(--accent-color);">4-month-old chickens</h2>
+                <div class="products-grid" id="category-4month">
+                    <!-- Products loaded dynamically -->
+                </div>
+            </div>
+
+            <!-- 5-month-old chickens -->
+            <div class="category-section" style="margin-bottom: 3rem;">
+                <h2 class="category-title" style="font-size: 1.75rem; color: var(--primary-color); margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 3px solid var(--accent-color);">5-month-old chickens</h2>
+                <div class="products-grid" id="category-5month">
+                    <!-- Products loaded dynamically -->
+                </div>
+            </div>
+
+            <!-- 6-month-old chickens and older -->
+            <div class="category-section">
+                <h2 class="category-title" style="font-size: 1.75rem; color: var(--primary-color); margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 3px solid var(--accent-color);">6-month-old chickens and older</h2>
+                <div class="products-grid" id="category-6month">
+                    <!-- Products loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Poultry Farm. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/categories.js"></script>
+</body>
+</html>

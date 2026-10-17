@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Poultry Farm</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>🐔 Poultry Farm</h2>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="categories.html" class="nav-link">Chicken Categories</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link">All Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin.html" class="nav-link active">Admin Dashboard</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header" style="background: linear-gradient(rgba(45, 95, 59, 0.75), rgba(45, 95, 59, 0.75)), url('../images (3).jpg') center/cover; color: white; text-align: center; padding: 4rem 2rem;">
+        <h1 class="page-title" style="font-size: 2.5rem; font-weight: 700;">Admin Dashboard</h1>
+        <p class="page-subtitle" style="font-size: 1.125rem; margin-top: 0.75rem; opacity: 0.95;">Manage chicken listings, prices, and inventory</p>
+    </header>
+
+    <!-- Admin Section -->
+    <section class="admin">
+        <div class="container">
+            <!-- Add/Edit Product Form -->
+            <div class="form-container" style="background-color: var(--bg-white); border: 1px solid var(--border-color); border-radius: 8px; padding: 2rem; margin-bottom: 2.5rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);">
+                <h2 id="formTitle" style="font-size: 1.5rem; color: var(--primary-color); margin-bottom: 1.75rem;">Add New Chicken Listing</h2>
+                <form id="productForm">
+                    <input type="hidden" id="productId">
+                    <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                        <div class="form-group" style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <label for="name" style="font-weight: 600; color: var(--text-dark); font-size: 0.875rem;">Product Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="e.g., Rhode Island Red Rooster" style="padding: 0.625rem 0.875rem; border: 1px solid var(--border-color); border-radius: 4px; font-size: 1rem; font-family: inherit;">
+                        </div>
+                        <div class="form-group" style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <label for="breed" style="font-weight: 600; color: var(--text-dark); font-size: 0.875rem;">Breed *</label>
+                            <input type="text" id="breed" name="breed" required placeholder="e.g., Rhode Island Red" style="padding: 0.625rem 0.875rem; border: 1px solid var(--border-color); border-radius: 4px; font-size: 1rem; font-family: inherit;">
+                        </div>
+                        <div class="form-group" style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <label for="age" style="font-weight: 600; color: var(--text-dark); font-size: 0.875rem;">Age (months) *</label>
+                            <input type="number" id="age" name="age" required min="1" placeholder="e.g., 6" style="padding: 0.625rem 0.875rem; border: 1px solid var(--border-color); border-radius: 4px; font-size: 1rem; font-family: inherit;">
+                        </div>
+                        <div class="form-group" style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <label for="ageCategory" style="font-weight: 600; color: var(--text-dark); font-size: 0.875rem;">Age Category *</label>
+                            <select id="ageCategory" name="ageCategory" required style="padding: 0.625rem 0.875rem; border: 1px solid var(--border-color); border-radius: 4px; font-size: 1rem; font-family: inherit;">
+                                <option value="">Select category</option>
+                                <option value="4-month-old chickens">4-month-old chickens</option>
+                                <option value="5-month-old chickens">5-month-old chickens</option>
+                                <option value="6-month-old chickens and older">6-month-old chickens and older</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <label for="price" style="font-weight: 600; color: var(--text-dark); font-size: 0.875rem;">Price ($) *</label>
+                            <input type="number" id="price" name="price" required min="0" step="0.01" placeholder="e.g., 45.99" style="padding: 0.625rem 0.875rem; border: 1px solid var(--border-color); border-radius: 4px; font-size: 1rem; font-family: inherit;">
+                        </div>
+                        <div class="form-group" style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <label for="image" style="font-weight: 600; color: var(--text-dark); font-size: 0.875rem;">Image Filename *</label>
+                            <select id="image" name="image" required style="padding: 0.625rem 0.875rem; border: 1px solid var(--border-color); border-radius: 4px; font-size: 1rem; font-family: inherit;">
+                                <option value="">Select image</option>
+                                <option value="images.jpg">images.jpg</option>
+                                <option value="images (1).jpg">images (1).jpg</option>
+                                <option value="images (2).jpg">images (2).jpg</option>
+                                <option value="images (3).jpg">images (3).jpg</option>
+                                <option value="images (4).jpg">images (4).jpg</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="display: flex; flex-direction: column; gap: 0.5rem; grid-column: span 2;">
+                            <label for="description" style="font-weight: 600; color: var(--text-dark); font-size: 0.875rem;">Description *</label>
+                            <textarea id="description" name="description" required rows="3" placeholder="Brief description of the chicken..." style="padding: 0.625rem 0.875rem; border: 1px solid var(--border-color); border-radius: 4px; font-size: 1rem; font-family: inherit; resize: vertical;"></textarea>
+                        </div>
+                        <div class="form-group" style="display: flex; align-items: center; gap: 0.75rem; grid-column: span 2;">
+                            <input type="checkbox" id="availability" name="availability" checked style="width: 1.125rem; height: 1.125rem;">
+                            <label for="availability" style="font-weight: 600; color: var(--text-dark); font-size: 0.875rem;">Available in inventory</label>
+                        </div>
+                    </div>
+                    <div class="form-actions" style="display: flex; gap: 0.75rem; margin-top: 2rem;">
+                        <button type="submit" id="submitBtn" class="btn btn-primary" style="flex: 0 1 auto; padding: 0.75rem 2rem;">Add Chicken</button>
+                        <button type="button" id="cancelBtn" class="btn btn-secondary" style="flex: 0 1 auto; padding: 0.75rem 2rem; display: none;">Cancel Edit</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Product Listings Table -->
+            <div class="table-container" style="background-color: var(--bg-white); border: 1px solid var(--border-color); border-radius: 8px; padding: 2rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); overflow-x: auto;">
+                <h2 style="font-size: 1.5rem; color: var(--primary-color); margin-bottom: 1.75rem;">Manage All Listings</h2>
+                <table id="productsTable" style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr style="background-color: var(--bg-light); border-bottom: 2px solid var(--border-color);">
+                            <th style="padding: 0.875rem; text-align: left; font-weight: 600; color: var(--text-dark); font-size: 0.875rem;">Image</th>
+                            <th style="padding: 0.875rem; text-align: left; font-weight: 600; color: var(--text-dark); font-size: 0.875rem;">Name</th>
+                            <th style="padding: 0.875rem; text-align: left; font-weight: 600; color: var(--text-dark); font-size: 0.875rem;">Breed</th>
+                            <th style="padding: 0.875rem; text-align: left; font-weight: 600; color: var(--text-dark); font-size: 0.875rem;">Age</th>
+                            <th style="padding: 0.875rem; text-align: left; font-weight: 600; color: var(--text-dark); font-size: 0.875rem;">Category</th>
+                            <th style="padding: 0.875rem; text-align: left; font-weight: 600; color: var(--text-dark); font-size: 0.875rem;">Price</th>
+                            <th style="padding: 0.875rem; text-align: left; font-weight: 600; color: var(--text-dark); font-size: 0.875rem;">Availability</th>
+                            <th style="padding: 0.875rem; text-align: center; font-weight: 600; color: var(--text-dark); font-size: 0.875rem;">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productsTableBody">
+                        <!-- Table rows loaded dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Poultry Farm. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>
